@@ -1,0 +1,41 @@
+.tag-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 20px 0;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.tag-badge {
+  display: inline-block;
+  padding: 2px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 22px;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform 0.15s, filter 0.15s;
+}
+
+/* 五类配色（亮色） */
+.tag-industry { background: #e8f0fe; color: #1a56c4; border-color: #cfe0fc; }
+.tag-tech     { background: #e6f4ea; color: #137333; border-color: #ceead6; }
+.tag-method   { background: #f3e8fd; color: #6b3aa0; border-color: #e6d4f7; }
+.tag-skill    { background: #fef0e2; color: #b0501a; border-color: #fbdfc4; }
+.tag-angle    { background: #e8eef2; color: #3a6b7c; border-color: #d0dde4; }
+.tag-other    { background: var(--vp-c-default-soft); color: var(--vp-c-text-2); }
+
+.tag-badge:hover {
+  filter: brightness(0.95);
+  transform: translateY(-1px);
+}
+
+/* 暗色模式 */
+.dark .tag-industry { background: #1e3a5f; color: #9cc0f5; border-color: #2a4a78; }
+.dark .tag-tech     { background: #1d3b2a; color: #8fd3a8; border-color: #265038; }
+.dark .tag-method   { background: #3a2654; color: #c9a8ef; border-color: #4e3670; }
+.dark .tag-skill    { background: #4a2e18; color: #f0b888; border-color: #5e3d22; }
+.dark .tag-angle    { background: #243640; color: #8fb6c5; border-color: #324a55; }
+.dark .tag-other    { background: var(--vp-c-default-soft); color: var(--vp-c-text-2); }

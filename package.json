@@ -1,0 +1,16 @@
+{
+  "name": "fde-report-wiki",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "FDE 全球市场与全行业落地调研报告 (2026) — VitePress wiki",
+  "scripts": {
+    "split": "node scripts/split.mjs",
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.3"
+  }
+}
