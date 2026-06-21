@@ -40,7 +40,7 @@ function cjkProcessTerm(term) {
 export default defineConfig({
   base,
   title: 'FDE-Wiki',
-  description: '2026 · 前沿部署工程师 (FDE) 全景调研 Wiki',
+  description: 'FDE-Wiki',
   lang: 'zh-CN',
   cleanUrls: true,
   ignoreDeadLinks: true,
