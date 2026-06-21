@@ -53,3 +53,14 @@
 .VPNavBarTitle.has-sidebar {
   margin-left: calc(-1 * var(--vp-sidebar-width, 272px));
 }
+
+/* /tags 标签云:徽章按类排列、自动换行 */
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 14px 0 20px;
+  padding: 14px 16px;
+  background: var(--vp-c-bg-alt);
+  border-radius: 8px;
+}

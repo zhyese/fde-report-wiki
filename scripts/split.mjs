@@ -181,7 +181,33 @@ for (const p of pages) {
   }
 }
 
-// ---------- 标签索引页 /tags ----------
+// ---------- 标签索引页 /tags(按五大类分组 + 标签云跳转)----------
+// 标签→类别映射,与 docs/.vitepress/theme/index.js 的 TAG_CAT 保持一致(徽章五色同源)
+const TAG_CAT = {
+  '金融': 'industry', '医疗': 'industry', '制造': 'industry', '政务': 'industry',
+  '零售电商': 'industry', '物流供应链': 'industry', '能源': 'industry', '电信媒体': 'industry',
+  '法律': 'industry', '教育': 'industry', '农业': 'industry',
+  'RAG': 'tech', 'Agent': 'tech', 'LLM选型': 'tech', '模型微调': 'tech', '推理优化': 'tech',
+  '数据工程': 'tech', 'MLOps': 'tech', '安全合规': 'tech', '可观测性': 'tech', '边缘AI': 'tech',
+  '知识图谱': 'tech', '多模态': 'tech', '成本容量': 'tech', '应用架构': 'tech', '性能调优': 'tech',
+  '系统测试': 'tech', '可解释性': 'tech', '隐私计算': 'tech', '云原生': 'tech', '评估测试': 'tech',
+  '项目交付': 'method', '需求工程': 'method', 'ROI': 'method', '合规伦理': 'method',
+  '售前招投标': 'method', '客户成功': 'method', '组织变革': 'method', '产品化': 'method',
+  '国际化': 'method', '知识管理': 'method', 'Prompt工程': 'method', '沙盘培养': 'method',
+  '团队': 'skill', '职业发展': 'skill', '沟通': 'skill', '写作': 'skill', '演示汇报': 'skill',
+  '财务素养': 'skill', '持续学习': 'skill', '思维模型': 'skill', '跨职能': 'skill',
+  '可持续健康': 'skill', '失败复盘': 'skill', '案例研究': 'skill',
+  '中国市场': 'angle', '海外模式': 'angle', '行业大模型': 'angle', '工具箱': 'angle'
+};
+const CAT_ORDER = ['industry', 'tech', 'method', 'skill', 'angle', 'other'];
+const CAT_LABEL = {
+  industry: '🏭 行业落地', tech: '⚙️ 技术栈', method: '📋 方法论',
+  skill: '💪 软技能', angle: '🌐 视角', other: '📦 其他'
+};
+const catOf = (t) => TAG_CAT[t] || 'other';
+// 标签 slug(与 index.js 的 slugifyTag 一致,确保页顶徽章 / 标签云 / 标题锚点三处跳转统一)
+const slugifyTag = (s) => s.toLowerCase().replace(/ +/g, '-').replace(/[^a-z0-9一-鿿-]/g, '');
+
 const tagIndex = new Map();
 for (const [slug, tags] of Object.entries(tagsMap)) {
   for (const t of (tags || [])) {
@@ -189,15 +215,36 @@ for (const [slug, tags] of Object.entries(tagsMap)) {
     tagIndex.get(t).push({ text: slugTitle[slug] || slug, link: '/' + slug });
   }
 }
-const sortedTags = [...tagIndex.entries()].sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0], 'zh'));
-let tagsMd = '---\ntitle: 按标签浏览\nlayout: doc\n---\n\n# 按标签浏览\n\n> 共 ' + sortedTags.length + ' 个标签，覆盖 ' + Object.keys(tagsMap).length + ' 个页面。点击条目直达。\n\n';
-if (!sortedTags.length) {
+// 按五大类分组,类内按热度降序
+const byCat = Object.fromEntries(CAT_ORDER.map((c) => [c, []]));
+for (const [tag, items] of tagIndex) byCat[catOf(tag)].push([tag, items]);
+for (const cat of CAT_ORDER) byCat[cat].sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0], 'zh'));
+
+const totalTags = tagIndex.size;
+let tagsMd = '---\ntitle: 按标签浏览\nlayout: doc\n---\n\n# 按标签浏览\n\n> 共 ' + totalTags + ' 个标签,覆盖 ' + Object.keys(tagsMap).length + ' 个页面。点击徽章直达该标签内容。\n\n';
+if (!totalTags) {
   tagsMd += '_（暂无标签。运行标签 workflow 生成 docs/.meta/tags.json 后重跑 npm run split。）_\n';
-}
-for (const [tag, items] of sortedTags) {
-  tagsMd += '## ' + tag + '\n\n';
-  for (const it of items) tagsMd += '- [' + it.text + '](' + it.link + ')\n';
-  tagsMd += '\n';
+} else {
+  // 标签云:按类分组的彩色徽章,点击锚跳到对应标签标题
+  tagsMd += '## 标签云\n\n';
+  for (const cat of CAT_ORDER) {
+    if (!byCat[cat].length) continue;
+    tagsMd += '<div class="tag-cloud">\n';
+    for (const [tag] of byCat[cat]) {
+      tagsMd += '<a class="tag-badge tag-' + cat + '" href="#' + slugifyTag(tag) + '">' + '#' + tag + '</a>\n';
+    }
+    tagsMd += '</div>\n\n';
+  }
+  // 按五大类分组的内容
+  for (const cat of CAT_ORDER) {
+    if (!byCat[cat].length) continue;
+    tagsMd += '## ' + CAT_LABEL[cat] + '\n\n';
+    for (const [tag, items] of byCat[cat]) {
+      tagsMd += '### ' + tag + ' {#' + slugifyTag(tag) + '}\n\n';
+      for (const it of items) tagsMd += '- [' + it.text + '](' + it.link + ')\n';
+      tagsMd += '\n';
+    }
+  }
 }
 fs.writeFileSync(path.join(DOCS, 'tags.md'), tagsMd);
 
@@ -256,5 +303,5 @@ const taggedCount = Object.keys(tagsMap).length;
 console.log('✅ 拆分完成（源: ' + (SRC === SRC_LOCAL ? 'source/（自包含）' : '../MD文件汇总（联动）') + '）');
 console.log('   页面: 首页1 + 导语' + orderedParts.length + ' + 章节' + chapCount + ' + 专题' + topicCount + ' + 附录' + (appendixLink ? 1 : 0) + ' + 标签页1');
 console.log('   交叉链接: 已对「第N章 / 专题X」启用；代码语言标记已清洗');
-console.log('   标签: ' + (taggedCount ? '已加载 ' + taggedCount + ' 页 → ' + sortedTags.length + ' 个标签' : '未找到 tags.json'));
+console.log('   标签: ' + (taggedCount ? '已加载 ' + taggedCount + ' 页 → ' + totalTags + ' 个标签' : '未找到 tags.json'));
 console.log('   输出: ' + DOCS);

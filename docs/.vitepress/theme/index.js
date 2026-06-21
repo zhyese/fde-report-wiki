@@ -26,6 +26,8 @@ const TAG_CAT = {
   '中国市场': 'angle', '海外模式': 'angle', '行业大模型': 'angle', '工具箱': 'angle'
 };
 const catOf = (t) => TAG_CAT[t] || 'other';
+// 标签 slug(与 scripts/split.mjs 的 slugifyTag 一致,确保页顶徽章跳转到 /tags 的标题锚点)
+const slugifyTag = (s) => s.toLowerCase().replace(/ +/g, '-').replace(/[^a-z0-9一-鿿-]/g, '');
 
 // 读取 frontmatter.tags，在正文上方渲染 #标签 徽章（按类别配色），点击跳 /tags。
 const TagBadges = {
@@ -38,7 +40,7 @@ const TagBadges = {
         'div',
         { class: 'tag-badges' },
         tags.map((t) =>
-          h('a', { class: 'tag-badge tag-' + catOf(t), href: '/tags#' + encodeURIComponent(t) }, '#' + t)
+          h('a', { class: 'tag-badge tag-' + catOf(t), href: '/tags#' + slugifyTag(t) }, '#' + t)
         )
       );
     };
