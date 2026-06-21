@@ -40,7 +40,9 @@
 .dark .tag-angle    { background: #243640; color: #8fb6c5; border-color: #324a55; }
 .dark .tag-other    { background: var(--vp-c-default-soft); color: var(--vp-c-text-2); }
 
-/* 内容区顶部下移,与左侧栏顶部对齐,消除标题处像素级重叠 */
-.vp-doc {
-  padding-top: 6px;
+/* 章节标题(H1)顶部增加留白并下移,避开上方栏对标题顶部的视觉挤压;
+   scroll-margin-top 保证点击侧栏锚点跳转时标题不被 sticky 顶部遮挡 */
+.vp-doc h1 {
+  margin-top: 24px;
+  scroll-margin-top: 80px;
 }
