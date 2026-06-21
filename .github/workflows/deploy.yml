@@ -19,8 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       # 提到 job 级：install/split/build 全共享，确保 build 拿到正确 base，
-      # 资源路径才指向 /fde-report-wiki/assets/ 而非根路径（否则线上资源 404、样式全挂）
-      VITEPRESS_BASE: /fde-report-wiki/
+      # 资源路径才指向 /fde-wiki/assets/ 而非根路径（否则线上资源 404、样式全挂）
+      VITEPRESS_BASE: /fde-wiki/
     steps:
       - uses: actions/checkout@v4
         with:
