@@ -5,9 +5,33 @@ layout: doc
 
 # 公司与案例索引
 
-> 19 家公司在报告中被提及,点击直达相关章节/专题。
+> 19 家公司在报告中被提及,点击徽章直达该公司相关章节/专题。
 
-## OpenAI(44)
+## 公司云
+
+<div class="company-cloud">
+<a class="company-badge company-global" href="#openai">OpenAI<span class="company-count">44</span></a>
+<a class="company-badge company-global" href="#anthropic">Anthropic<span class="company-count">42</span></a>
+<a class="company-badge company-global" href="#palantir">Palantir<span class="company-count">37</span></a>
+<a class="company-badge company-cn" href="#阿里云">阿里云<span class="company-count">20</span></a>
+<a class="company-badge company-global" href="#google">Google<span class="company-count">18</span></a>
+<a class="company-badge company-cn" href="#腾讯云">腾讯云<span class="company-count">17</span></a>
+<a class="company-badge company-global" href="#databricks">Databricks<span class="company-count">16</span></a>
+<a class="company-badge company-global" href="#ibm">IBM<span class="company-count">16</span></a>
+<a class="company-badge company-cn" href="#智谱">智谱<span class="company-count">15</span></a>
+<a class="company-badge company-global" href="#nvidia">NVIDIA<span class="company-count">14</span></a>
+<a class="company-badge company-global" href="#snowflake">Snowflake<span class="company-count">14</span></a>
+<a class="company-badge company-cn" href="#华为云">华为云<span class="company-count">13</span></a>
+<a class="company-badge company-global" href="#aws">AWS<span class="company-count">11</span></a>
+<a class="company-badge company-global" href="#microsoft">Microsoft<span class="company-count">10</span></a>
+<a class="company-badge company-cn" href="#百度">百度<span class="company-count">7</span></a>
+<a class="company-badge company-global" href="#meta">Meta<span class="company-count">6</span></a>
+<a class="company-badge company-cn" href="#月之暗面">月之暗面<span class="company-count">5</span></a>
+<a class="company-badge company-cn" href="#字节跳动">字节跳动<span class="company-count">3</span></a>
+<a class="company-badge company-cn" href="#商汤">商汤<span class="company-count">2</span></a>
+</div>
+
+## OpenAI(44) {#openai}
 
 - [第 1 章 FDE 范式的起源与定义演进:从伊拉克战场到 2026 AI 焦点](/ch01)
 - [第 2 章 2026 全球 FDE 市场全景:增长、薪酬、供需与人才缺口](/ch02)
@@ -54,7 +78,7 @@ layout: doc
 - [深度专题六十一 FDE 的跨职能协作](/topic61)
 - [附录](/appendix)
 
-## Anthropic(42)
+## Anthropic(42) {#anthropic}
 
 - [第 1 章 FDE 范式的起源与定义演进:从伊拉克战场到 2026 AI 焦点](/ch01)
 - [第 2 章 2026 全球 FDE 市场全景:增长、薪酬、供需与人才缺口](/ch02)
@@ -99,7 +123,7 @@ layout: doc
 - [深度专题六十二 大模型应用的可解释性与因果](/topic62)
 - [附录](/appendix)
 
-## Palantir(37)
+## Palantir(37) {#palantir}
 
 - [第 1 章 FDE 范式的起源与定义演进:从伊拉克战场到 2026 AI 焦点](/ch01)
 - [第 2 章 2026 全球 FDE 市场全景:增长、薪酬、供需与人才缺口](/ch02)
@@ -139,7 +163,7 @@ layout: doc
 - [深度专题六十一 FDE 的跨职能协作](/topic61)
 - [附录](/appendix)
 
-## 阿里云(20)
+## 阿里云(20) {#阿里云}
 
 - [第 1 章 FDE 范式的起源与定义演进:从伊拉克战场到 2026 AI 焦点](/ch01)
 - [第 2 章 2026 全球 FDE 市场全景:增长、薪酬、供需与人才缺口](/ch02)
@@ -162,7 +186,7 @@ layout: doc
 - [深度专题四十四 AI 项目的招投标与售前](/topic44)
 - [深度专题四十七 对话式 AI 与智能体产品设计](/topic47)
 
-## Google(18)
+## Google(18) {#google}
 
 - [第 8 章 AI Agent 时代的 FDE:人机混合作战单元与 MCP](/ch08)
 - [第 9 章 驻场工程化技术栈:LLM 选型 / RAG / Agent / 推理 / 量化 / 可观测](/ch09)
@@ -183,7 +207,7 @@ layout: doc
 - [深度专题六十二 大模型应用的可解释性与因果](/topic62)
 - [附录](/appendix)
 
-## 腾讯云(17)
+## 腾讯云(17) {#腾讯云}
 
 - [第 1 章 FDE 范式的起源与定义演进:从伊拉克战场到 2026 AI 焦点](/ch01)
 - [第 2 章 2026 全球 FDE 市场全景:增长、薪酬、供需与人才缺口](/ch02)
@@ -203,7 +227,7 @@ layout: doc
 - [深度专题四十一 数据中台与 AI 中台的融合](/topic41)
 - [深度专题四十三 FDE 的国际化与跨地域交付](/topic43)
 
-## Databricks(16)
+## Databricks(16) {#databricks}
 
 - [第 1 章 FDE 范式的起源与定义演进:从伊拉克战场到 2026 AI 焦点](/ch01)
 - [第 2 章 2026 全球 FDE 市场全景:增长、薪酬、供需与人才缺口](/ch02)
@@ -222,7 +246,7 @@ layout: doc
 - [深度专题五十八 FDE 的演示(Demo)与汇报艺术](/topic58)
 - [附录](/appendix)
 
-## IBM(16)
+## IBM(16) {#ibm}
 
 - [第 1 章 FDE 范式的起源与定义演进:从伊拉克战场到 2026 AI 焦点](/ch01)
 - [第 2 章 2026 全球 FDE 市场全景:增长、薪酬、供需与人才缺口](/ch02)
@@ -241,7 +265,7 @@ layout: doc
 - [深度专题六十一 FDE 的跨职能协作](/topic61)
 - [附录](/appendix)
 
-## 智谱(15)
+## 智谱(15) {#智谱}
 
 - [第 1 章 FDE 范式的起源与定义演进:从伊拉克战场到 2026 AI 焦点](/ch01)
 - [第 2 章 2026 全球 FDE 市场全景:增长、薪酬、供需与人才缺口](/ch02)
@@ -259,7 +283,7 @@ layout: doc
 - [深度专题五十五 FDE 的持续学习与信息素养](/topic55)
 - [附录](/appendix)
 
-## NVIDIA(14)
+## NVIDIA(14) {#nvidia}
 
 - [第 9 章 驻场工程化技术栈:LLM 选型 / RAG / Agent / 推理 / 量化 / 可观测](/ch09)
 - [第 13 章 制造业:AI 视觉质检、预测性维护与工业大脑](/ch13)
@@ -276,7 +300,7 @@ layout: doc
 - [深度专题五十四 AI 系统的容量规划与成本建模](/topic54)
 - [附录](/appendix)
 
-## Snowflake(14)
+## Snowflake(14) {#snowflake}
 
 - [第 1 章 FDE 范式的起源与定义演进:从伊拉克战场到 2026 AI 焦点](/ch01)
 - [第 2 章 2026 全球 FDE 市场全景:增长、薪酬、供需与人才缺口](/ch02)
@@ -293,7 +317,7 @@ layout: doc
 - [深度专题六十一 FDE 的跨职能协作](/topic61)
 - [附录](/appendix)
 
-## 华为云(13)
+## 华为云(13) {#华为云}
 
 - [第 1 章 FDE 范式的起源与定义演进:从伊拉克战场到 2026 AI 焦点](/ch01)
 - [第 2 章 2026 全球 FDE 市场全景:增长、薪酬、供需与人才缺口](/ch02)
@@ -309,7 +333,7 @@ layout: doc
 - [深度专题四十三 FDE 的国际化与跨地域交付](/topic43)
 - [深度专题四十四 AI 项目的招投标与售前](/topic44)
 
-## AWS(11)
+## AWS(11) {#aws}
 
 - [第 9 章 驻场工程化技术栈:LLM 选型 / RAG / Agent / 推理 / 量化 / 可观测](/ch09)
 - [深度专题五 数据工程实战:企业 AI 的 70% 与看不见的地基](/topic05)
@@ -323,7 +347,7 @@ layout: doc
 - [深度专题四十一 数据中台与 AI 中台的融合](/topic41)
 - [深度专题四十三 FDE 的国际化与跨地域交付](/topic43)
 
-## Microsoft(10)
+## Microsoft(10) {#microsoft}
 
 - [第 8 章 AI Agent 时代的 FDE:人机混合作战单元与 MCP](/ch08)
 - [深度专题七 技术选型决策工程:七步法与决策树](/topic07)
@@ -336,7 +360,7 @@ layout: doc
 - [深度专题六十二 大模型应用的可解释性与因果](/topic62)
 - [附录](/appendix)
 
-## 百度(7)
+## 百度(7) {#百度}
 
 - [第 9 章 驻场工程化技术栈:LLM 选型 / RAG / Agent / 推理 / 量化 / 可观测](/ch09)
 - [深度专题二十五 FDE 工具链生态全景(2026)](/topic25)
@@ -346,7 +370,7 @@ layout: doc
 - [深度专题四十三 FDE 的国际化与跨地域交付](/topic43)
 - [深度专题四十六 大模型应用性能调优实战](/topic46)
 
-## Meta(6)
+## Meta(6) {#meta}
 
 - [第 9 章 驻场工程化技术栈:LLM 选型 / RAG / Agent / 推理 / 量化 / 可观测](/ch09)
 - [深度专题二十二 边缘 AI 与端侧部署实战](/topic22)
@@ -355,7 +379,7 @@ layout: doc
 - [深度专题四十二 FDE 现场工具箱(可照抄的命令/脚本/模板速查)](/topic42)
 - [深度专题五十五 FDE 的持续学习与信息素养](/topic55)
 
-## 月之暗面(5)
+## 月之暗面(5) {#月之暗面}
 
 - [第 1 章 FDE 范式的起源与定义演进:从伊拉克战场到 2026 AI 焦点](/ch01)
 - [第 2 章 2026 全球 FDE 市场全景:增长、薪酬、供需与人才缺口](/ch02)
@@ -363,13 +387,13 @@ layout: doc
 - [第 23 章 未来趋势与组织变革:3—5 年展望](/ch23)
 - [深度专题二十八 中国 FDE 市场深度拆解](/topic28)
 
-## 字节跳动(3)
+## 字节跳动(3) {#字节跳动}
 
 - [第 1 章 FDE 范式的起源与定义演进:从伊拉克战场到 2026 AI 焦点](/ch01)
 - [第 3 章 头部公司 FDE 模式深度拆解](/ch03)
 - [深度专题二十一 知识图谱与 GraphRAG 深度实战](/topic21)
 
-## 商汤(2)
+## 商汤(2) {#商汤}
 
 - [深度专题二十五 FDE 工具链生态全景(2026)](/topic25)
 - [深度专题三十二 多模态 AI 落地实战](/topic32)

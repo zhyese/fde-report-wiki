@@ -65,6 +65,40 @@
   border-radius: 8px;
 }
 
+/* /companies 公司云:双色徽章(海外=蓝、国内=红),点击跳同页公司分组锚点 */
+.company-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 14px 0 20px;
+  padding: 14px 16px;
+  background: var(--vp-c-bg-alt);
+  border-radius: 8px;
+}
+.company-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 22px;
+  border-radius: 14px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform 0.15s, filter 0.15s;
+}
+.company-count {
+  font-size: 11px;
+  font-weight: 500;
+  opacity: 0.65;
+}
+.company-global { background: #e8f0fe; color: #1a56c4; border-color: #cfe0fc; }
+.company-cn     { background: #fdeaea; color: #c0392b; border-color: #f8cfcf; }
+.company-badge:hover { filter: brightness(0.95); transform: translateY(-1px); }
+.dark .company-global { background: #1e3a5f; color: #9cc0f5; border-color: #2a4a78; }
+.dark .company-cn     { background: #4a1f1f; color: #f0a0a0; border-color: #5e2a2a; }
+
 /* ===== 阅读增强组件 ===== */
 /* 字号:由 FontSize 组件控制 --vp-doc-font-size,localStorage 记忆 */
 .vp-doc { font-size: var(--vp-doc-font-size, 16px); }

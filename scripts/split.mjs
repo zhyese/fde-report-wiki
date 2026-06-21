@@ -303,9 +303,17 @@ fs.writeFileSync(path.join(DOCS, 'tags.md'), tagsMd);
 
 // ---------- 公司/案例索引页 /companies ----------
 const sortedCompanies = [...companyIndex.entries()].sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0], 'zh'));
-let companiesMd = '---\ntitle: 公司与案例\nlayout: doc\n---\n\n# 公司与案例索引\n\n> ' + sortedCompanies.length + ' 家公司在报告中被提及,点击直达相关章节/专题。\n\n';
+// 公司分类:含中文=国内厂商(cn),否则=海外大厂(global),徽章双色区分
+const companyCat = (c) => /[一-鿿]/.test(c) ? 'cn' : 'global';
+let companiesMd = '---\ntitle: 公司与案例\nlayout: doc\n---\n\n# 公司与案例索引\n\n> ' + sortedCompanies.length + ' 家公司在报告中被提及,点击徽章直达该公司相关章节/专题。\n\n';
+// 公司云:彩色徽章,点击跳同页公司分组锚点(对称于 /tags 的标签云;slug 复用 slugifyTag 保证锚点一致)
+companiesMd += '## 公司云\n\n<div class="company-cloud">\n';
 for (const [company, items] of sortedCompanies) {
-  companiesMd += '## ' + company + '(' + items.length + ')\n\n';
+  companiesMd += '<a class="company-badge company-' + companyCat(company) + '" href="#' + slugifyTag(company) + '">' + company + '<span class="company-count">' + items.length + '</span></a>\n';
+}
+companiesMd += '</div>\n\n';
+for (const [company, items] of sortedCompanies) {
+  companiesMd += '## ' + company + '(' + items.length + ') {#' + slugifyTag(company) + '}\n\n';
   for (const it of items) companiesMd += '- [' + it.text + '](' + it.link + ')\n';
   companiesMd += '\n';
 }
