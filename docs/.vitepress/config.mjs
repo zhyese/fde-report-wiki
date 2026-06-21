@@ -39,7 +39,7 @@ function cjkProcessTerm(term) {
 }
 export default defineConfig({
   base,
-  title: 'FDE 全球市场与全行业落地调研报告',
+  title: 'FDE-Wiki',
   description: '2026 · 前沿部署工程师 (FDE) 全景调研 Wiki',
   lang: 'zh-CN',
   cleanUrls: true,
