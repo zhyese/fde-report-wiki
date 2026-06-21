@@ -104,6 +104,11 @@
 .pn-label { font-size: 12px; color: var(--vp-c-text-2); }
 .pn-title { font-size: 14px; font-weight: 500; color: var(--vp-c-text-1); }
 
+/* 隐藏 VitePress 默认的「上一页 / 下一页」导航(footer.VPDocFooter 内),
+   它与上方自定义的「上一篇 / 下一篇」功能重复。自定义组件位于 .vp-doc 内(不在 footer 中),
+   此选择器不命中它,故只删默认那套、保留自定义的。 */
+footer.VPDocFooter .prev-next { display: none; }
+
 /* 字号控件(顶部导航栏) */
 .font-size-ctrl { display: flex; gap: 4px; align-items: center; margin-right: 8px; }
 .fs-btn { width: 28px; height: 28px; border-radius: 6px; border: 1px solid var(--vp-c-divider); background: var(--vp-c-bg); color: var(--vp-c-text-2); font-size: 12px; cursor: pointer; padding: 0; }
