@@ -39,3 +39,8 @@
 .dark .tag-skill    { background: #4a2e18; color: #f0b888; border-color: #5e3d22; }
 .dark .tag-angle    { background: #243640; color: #8fb6c5; border-color: #324a55; }
 .dark .tag-other    { background: var(--vp-c-default-soft); color: var(--vp-c-text-2); }
+
+/* 内容区顶部下移,与左侧栏顶部对齐,消除标题处像素级重叠 */
+.vp-doc {
+  padding-top: 6px;
+}
